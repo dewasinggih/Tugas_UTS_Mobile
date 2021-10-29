@@ -24,34 +24,34 @@ class MainActivity : AppCompatActivity() {
 
     private fun simulasi(){
         
-        val biaya: LinearLayout = findViewById(R.id.layanan)
-        val bungapinjam: LinearLayout = findViewById(R.id.bunga)
-        val totalcair: LinearLayout = findViewById(R.id.pencairan)
-        val totaluang: LinearLayout = findViewById(R.id.total)
+                val moneny: LinearLayout = findViewById(R.id.layanan)
+                val tenor: LinearLayout = findViewById(R.id.bunga)
+                val pencairan1: LinearLayout = findViewById(R.id.pencairan)
+                val total1: LinearLayout = findViewById(R.id.total)
 
-        val inputpinjaman: TextInputEditText = findViewById(R.id.pinjamedit)
-        val month: TextInputEditText = findViewById(R.id.monthedit)
-        var pinjaman = inputpinjaman.text.toString().toDoubleOrNull()
-        var monthvalue = month.text.toString().toDoubleOrNull()
+        val inputpin: TextInputEditText = findViewById(R.id.pinjamedit)
+        val bulan: TextInputEditText = findViewById(R.id.monthedit)
+        var pinjaman = inputpin.text.toString().toDoubleOrNull()
+        var monthvalue = bulan.text.toString().toDoubleOrNull()
 
-        var layanan = pinjaman?.times(0.05)
-        var bunga = pinjaman?.times(0.0375)
-        var pencairan= pinjaman?.minus(layanan!!)
-        var total = monthvalue?.let { bunga?.times(it)?.let { pinjaman?.plus(it) } }
+                var endos = pinjaman?.times(0.05)
+                var bunga2 = pinjaman?.times(0.0375)
+                var pencairan2= pinjaman?.minus(endos!!)
+                var total = monthvalue?.let { bunga2?.times(it)?.let { pinjaman?.plus(it) } }
 
-        val biaya_res: TextView = findViewById(R.id.biayalayan1)
-        val bunga_res: TextView = findViewById(R.id.bunga2)
-        val totalcair_res: TextView = findViewById(R.id.totalcair2)
-        val total_res: TextView = findViewById(R.id.total2)
+        val biaya: TextView = findViewById(R.id.biayalayan1)
+        val bunga3: TextView = findViewById(R.id.bunga2)
+        val total2: TextView = findViewById(R.id.totalcair2)
+        val total3: TextView = findViewById(R.id.total2)
 
-        biaya_res.text = currencyConvert(layanan!!)
-        bunga_res.text = currencyConvert(bunga!!)
-        totalcair_res.text = currencyConvert(pencairan!!)
-        total_res.text = currencyConvert(total!!)
+                biaya.text = currencyConvert(endos!!)
+                bunga3.text = currencyConvert(bunga2!!)
+                total2.text = currencyConvert(pencairan2!!)
+                total3.text = currencyConvert(total!!)
 
-        biaya.visibility = View.VISIBLE
-        bungapinjam.visibility = View.VISIBLE
-        totalcair.visibility = View.VISIBLE
-        totaluang.visibility = View.VISIBLE
+        moneny.visibility = View.VISIBLE
+        tenor.visibility = View.VISIBLE
+        pencairan1.visibility = View.VISIBLE
+        total1.visibility = View.VISIBLE
     }
 }
